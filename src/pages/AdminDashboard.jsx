@@ -23,13 +23,13 @@ const AdminDashboard = () => {
     const fetchData = async () => {
       try {
         const [statsRes, usersRes, storesRes] = await Promise.all([
-          fetch('http://localhost:5000/api/admin/stats', {
+          fetch('${import.meta.env.VITE_API_BASE_URL}/api/admin/stats', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          fetch('http://localhost:5000/api/admin/users', {
+          fetch('${import.meta.env.VITE_API_BASE_URL}/api/admin/users', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          fetch('http://localhost:5000/api/admin/stores', {
+          fetch('${import.meta.env.VITE_API_BASE_URL}/api/admin/stores', {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);
