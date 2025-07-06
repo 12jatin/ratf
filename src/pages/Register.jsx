@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import loginImage from '../assets/loginImage.avif';
+import jatin
 
 function Register() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', form);
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, form);
       setSuccess('Registration successful. Please login.');
       setTimeout(() => navigate('/'), 1500);
     } catch (err) {
