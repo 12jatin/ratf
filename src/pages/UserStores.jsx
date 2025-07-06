@@ -18,7 +18,7 @@ function UserStores() {
 
   const fetchStores = async () => {
     try {
-      const res = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/stores', {
+      const res = await axios.get('https://ratb.onrender.com/api/stores', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStores(res.data);
@@ -29,7 +29,7 @@ function UserStores() {
 
   const fetchUserRatings = async () => {
     try {
-      const res = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/ratings/my', {
+      const res = await axios.get('https://ratb.onrender.com/api/ratings/my', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const ratingsMap = {};
@@ -45,7 +45,7 @@ function UserStores() {
   const handleRating = async (store_id, rating) => {
     try {
       await axios.post(
-        '${import.meta.env.VITE_API_BASE_URL}/api/ratings',
+        'https://ratb.onrender.com/api/ratings',
         { store_id, rating },
         {
           headers: { Authorization: `Bearer ${token}` },
