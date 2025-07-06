@@ -17,14 +17,14 @@ function StoreDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const ratingRes = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/ratings/owner', {
+        const ratingRes = await axios.get('https://ratb.onrender.com/api/ratings/owner', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setRatings(ratingRes.data);
 
         if (ratingRes.data.length > 0) {
           const storeName = ratingRes.data[0].store_name;
-          const storeRes = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/stores', {
+          const storeRes = await axios.get('https://ratb.onrender.com/api/stores', {
             headers: { Authorization: `Bearer ${token}` },
           });
 
@@ -51,7 +51,7 @@ function StoreDashboard() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        '${import.meta.env.VITE_API_BASE_URL}/api/auth/update-password',
+        'https://ratb.onrender.com/api/auth/update-password',
         { oldPassword, newPassword },
         {
           headers: {
