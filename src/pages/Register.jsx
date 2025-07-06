@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import loginImage from '../assets/loginImage.avif';
-import jatin
+
 
 function Register() {
   const navigate = useNavigate();
