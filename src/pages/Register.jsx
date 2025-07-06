@@ -25,7 +25,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, form);
+      await axios.post(`https://ratb.onrender.com/api/auth/register`, form);
       setSuccess('Registration successful. Please login.');
       setTimeout(() => navigate('/'), 1500);
     } catch (err) {
