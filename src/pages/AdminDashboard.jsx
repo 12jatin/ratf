@@ -23,13 +23,13 @@ const AdminDashboard = () => {
     const fetchData = async () => {
       try {
         const [statsRes, usersRes, storesRes] = await Promise.all([
-          fetch('${import.meta.env.VITE_API_BASE_URL}/api/admin/stats', {
+          fetch('https://ratb.onrender.com/api/admin/stats', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          fetch('${import.meta.env.VITE_API_BASE_URL}/api/admin/users', {
+          fetch('https://ratb.onrender.com/api/admin/users', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          fetch('${import.meta.env.VITE_API_BASE_URL}/api/admin/stores', {
+          fetch('https://ratb.onrender.com/api/admin/stores', {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);
